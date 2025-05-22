@@ -50,12 +50,7 @@ local plugin_specs = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    enabled = function()
-      if vim.g.is_mac then
-        return true
-      end
-      return false
-    end,
+    enabled = true,
     event = "VeryLazy",
     build = ":TSUpdate",
     config = function()
@@ -601,6 +596,7 @@ local plugin_specs = {
     opts = { -- set to setup table
     },
   },
+  {'glepnir/nerdicons.nvim', cmd = 'NerdIcons', config = function() require('nerdicons').setup({}) end}
 }
 
 require("lazy").setup {
